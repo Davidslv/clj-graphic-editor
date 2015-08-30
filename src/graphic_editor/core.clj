@@ -7,10 +7,10 @@
   (println "Hello, World!"))
 
 
-(defn new-image
-  [x y]
-  [[\O \O][\O \O]])
-
+(defn new-image [rows cols]
+  (vec (for [i (range rows)]
+         (vec (for [j (range cols)] \O)) ))
+  )
 
 ;(defn flood-fill
 ;  "Happy Recursion"
@@ -20,5 +20,3 @@
 ; Add function to read user input
 
 ; Add function to print help funtions
-
-;
