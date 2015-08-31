@@ -8,8 +8,8 @@
 
 
 (defn new-image [rows cols]
-  (vec (for [i (range rows)]
-         (vec (for [j (range cols)] \O)) ))
+  (vec (for [_ (range rows)]
+         (vec (repeat cols \O))))
   )
 
 ;(defn flood-fill
