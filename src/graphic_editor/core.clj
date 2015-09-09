@@ -7,18 +7,15 @@
   (println "Hello, World!"))
 
 
-(defn new-image [rows cols]
-  (vec (repeat rows (vec (repeat cols \O)))))
+(defn new-image
+  "Creates a new image"
+  [rows cols]
+   (->> (repeat cols \O)
+        vec
+        (repeat rows)
+        vec))
 
-
-
- 
-
-;(defn flood-fill
-;  "Happy Recursion"
-;  [x y]
-;  )
-
-; Add function to read user input
-
-; Add function to print help funtions
+(defn colour-pixel
+  "Colours the pixel given"
+  [image x y colour]
+  (assoc-in image [x y] colour))
