@@ -8,9 +8,11 @@
 
 
 (defn new-image [rows cols]
-  (vec (for [_ (range rows)]
-         (vec (repeat cols \O))))
-  )
+  (vec (repeat rows (vec (repeat cols \O)))))
+
+
+
+ 
 
 ;(defn flood-fill
 ;  "Happy Recursion"
