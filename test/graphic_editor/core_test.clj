@@ -15,3 +15,7 @@
 
   (testing "it should colour the given pixel"
     (is (= (colour-pixel (new-image 4 5) 1 2 \A) [[\O \O \O \O \O] [\O \O \A \O \O] [\O \O \O \O \O] [\O \O \O \O \O]]))))
+
+(deftest colour-column-test
+  (testing "it should colour the first column"
+    (is (= (colour-column (new-image 3 3) 0 \A) [[\A \O \O] [\A \O \O] [\A \O \O]]))))

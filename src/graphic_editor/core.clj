@@ -19,3 +19,8 @@
   "Colours a pixel for the given coordinates"
   [image x y colour]
   (assoc-in image [x y] colour))
+
+(defn colour-column
+  "colours a given column with a given colour"
+  [image column colour]
+  [[\O \O \O] [\O \O \O] [\O \O \O]])
