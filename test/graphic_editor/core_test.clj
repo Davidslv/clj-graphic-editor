@@ -4,9 +4,7 @@
 
 (deftest new-image-test
   (testing "it should return a new image"
-    (is (= (new-image 2 2) [[\O \O] [\O \O]]))))
+    (is (= (new-image 2 2) [[\O \O] [\O \O]])))
 
-(deftest new-image-5-by-5-test
-  (testing "it should return a 5x5 new image"
-    (is (= (new-image 5 5) [[\O \O \O \O \O] [\O \O \O \O \O] [\O \O \O \O \O] [\O \O \O \O \O] [\O \O \O \O \O]]))
-  ))
+    (testing "it should return a 5x5 new image"
+    (is (= (new-image 5 5) [[\O \O \O \O \O] [\O \O \O \O \O] [\O \O \O \O \O] [\O \O \O \O \O] [\O \O \O \O \O]]))))
