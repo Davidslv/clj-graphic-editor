@@ -22,5 +22,8 @@
 
 (defn colour-column
   "colours a given column with a given colour"
-  [image column colour]
-  [[\O \O \O] [\O \O \O] [\O \O \O]])
+  [image x y colour]
+  (if (< x 0)
+      image
+      (recur (colour-pixel image x y colour) (inc x) y colour)))
+

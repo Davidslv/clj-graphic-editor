@@ -18,4 +18,4 @@
 
 (deftest colour-column-test
   (testing "it should colour the first column"
-    (is (= (colour-column (new-image 3 3) 0 \A) [[\A \O \O] [\A \O \O] [\A \O \O]]))))
+    (is (= (colour-column (new-image 3 3) 0 0 \A) [[\A \O \O] [\A \O \O] [\A \O \O]]))))
