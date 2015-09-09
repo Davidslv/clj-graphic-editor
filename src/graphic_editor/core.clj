@@ -16,6 +16,6 @@
         vec))
 
 (defn colour-pixel
-  "Colours the pixel given"
+  "Colours a pixel for the given coordinates"
   [image x y colour]
   (assoc-in image [x y] colour))
