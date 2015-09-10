@@ -23,7 +23,8 @@
 (defn colour-column
   "colours a given column with a given colour"
   [image x y colour]
-  (if (< x 0)
+  (let [new-image (colour-pixel image x y colour)
+        rows (count image)]
+  (if (>= x rows)
       image
-      (recur (colour-pixel image x y colour) (inc x) y colour)))
-
+      (recur new-image (inc x) y colour))))
