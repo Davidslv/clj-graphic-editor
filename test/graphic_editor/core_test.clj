@@ -22,3 +22,10 @@
 
   (testing "it should colour the second column"
     (is (= (colour-column (new-image 3 3) 0 1 \A) [[\O \A \O] [\O \A \O] [\O \A \O]]))))
+
+(deftest colour-row-test
+  (testing "it should colour the first row"
+    (is (= (colour-row (new-image 3 3) 0 0 \A) [[\A \A \A] [\O \O \O] [\O \O \O]])))
+
+  (testing "it should colour the second row"
+    (is (= (colour-row (new-image 3 3) 1 0 \A) [[\O \O \O] [\A \A \A] [\O \O \O]]))))

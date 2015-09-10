@@ -25,6 +25,15 @@
   [image x y colour]
   (let [new-image (colour-pixel image x y colour)
         rows (count image)]
-  (if (>= x rows)
+    (if (>= x rows)
+        image
+        (recur new-image (inc x) y colour))))
+
+(defn colour-row
+  "colours a given row with a given colour"
+  [image x y colour]
+  (let [new-image (colour-pixel image x y colour)
+        columns (count (first image))]
+    (if (>= y columns)
       image
-      (recur new-image (inc x) y colour))))
+      (recur new-image x (inc y) colour))))
