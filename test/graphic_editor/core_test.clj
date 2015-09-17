@@ -49,11 +49,16 @@
 
 (deftest colour-row-test
   (testing "it should colour the first row"
-    (is (= (colour-row (new-image 3 5) 0 0 \A) [[\A \A \A \A \A]
-                                                [\O \O \O \O \O]
-                                                [\O \O \O \O \O]])))
+    (is (= (colour-row (new-image 3 5) 0 4 0 \A) [[\A \A \A \A \A]
+                                                  [\O \O \O \O \O]
+                                                  [\O \O \O \O \O]])))
 
-  (testing "it should colour the second row"
-    (is (= (colour-row (new-image 3 5) 1 0 \A) [[\O \O \O \O \O]
-                                                [\A \A \A \A \A]
-                                                [\O \O \O \O \O]]))))
+  (testing "it should colour the first 3 columns in the 2nd row"
+    (is (= (colour-row (new-image 3 5) 1 2 0 \A) [[\O \O \O \O \O]
+                                                  [\A \A \A \O \O]
+                                                  [\O \O \O \O \O]])))
+
+  (testing "it should colour the 2nd and 3rd columns in the 2nd row"
+    (is (= (colour-row (new-image 3 5) 1 2 1 \A) [[\O \O \O \O \O]
+                                                  [\O \A \A \O \O]
+                                                  [\O \O \O \O \O]]))))
