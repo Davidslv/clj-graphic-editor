@@ -21,13 +21,13 @@
   (assoc-in image [x y] colour))
 
 (defn colour-column
-  "colours a given column with a given colour"
-  [image x y colour]
-  (let [new-image (colour-pixel image x y colour)
-        rows (count image)]
-    (if (>= x rows)
+  "Draws a vertical segment of a colour in column between rows Y1 and Y2 (inclusive)"
+  [image x y1 y2 colour]
+  (let [new-image (colour-pixel image x y1 colour)
+        rows      (count image)]
+    (if (> x y2)
         image
-        (recur new-image (inc x) y colour))))
+        (recur new-image (inc x) y1 y2 colour))))
 
 (defn colour-row
   "colours a given row with a given colour"
